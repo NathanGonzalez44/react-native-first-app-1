@@ -1,36 +1,32 @@
-import * as React from 'react'
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import axios from 'axios';
-
+import axios from 'axios'
 const API_URL = 'http://localhost:1337'
 
-const getToken = async () => {
-  try {
-    const token = await AsyncStorage.getItem('userToken')
-    return token
-  } catch (error) {
-    console.log(error)
-    return null
-  }
-}
-
-const getNotes = async () => {
-  const token = await getToken()
-  if (token) {
+const getToken = async () =>{
     try {
-      const response = await axios(`${API_URL}/notes`, {
-        headers: {
-          Authorization: 'Bearer ' + token
-        }
-      })
-      return response.data
+        const token = await AsyncStorage.getItem('userToken')
+        return token
     } catch (error) {
-      console.error(error)
+        console.error(error)
+        return null
     }
-  }
 }
-
+const getNotes = async () => {
+    const token = await getToken()
+    if(token){
+        try {
+            const response = await axios(`${API_URL}/notes`, {
+                headers: {
+                    Authorization : 'Bearer '+token
+                }
+            })
+            return response.data
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}
 module.exports = {
-  API_URL,
-  getNotes
+    getNotes
 }
