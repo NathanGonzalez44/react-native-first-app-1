@@ -1,20 +1,26 @@
 import { StyleSheet } from 'react-native'
 
+import { darkTheme } from '../../Theme/Colors'
 
 export default StyleSheet.create({
-    container : {
-        width: '47%',
-        margin : 5,
-        height : '20%',
-        backgroundColor: '#FFFFA5',
-        padding: 5,
-        elevation: 5,
-        
-    },
-    button : {
-        width : 100,
-        height : 100,
-        borderRadius: 50,
-        backgroundColor: 'blue',
-    }
+  container: {
+    width: '48%',
+    backgroundColor: darkTheme.background,
+    elevation: 5,
+    marginTop: 10
+  },
+  contentContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 10
+  },
+  title: {
+    color: darkTheme.text,
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  content: {
+    color: darkTheme.text,
+    fontSize: 14,
+  }
 })
+
