@@ -18,6 +18,7 @@ function HomeScreen ({ navigation }) {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    {console.log(state)}
       <Text>Yo {state && state.user ? state.user.username : 'null'} !!</Text>
       <Button
         title='Go to Screen2'
