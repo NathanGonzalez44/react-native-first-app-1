@@ -34,7 +34,7 @@ const storeToken = async token => {
 }
 
 const Login = ({ navigation }) => {
-  const [username, setUsername] = React.useState('bobo@gmail.com')
+  const [username, setUsername] = React.useState('znatan@zbla.fr')
   const [password, setPassword] = React.useState('test44')
 
   const { signIn } = React.useContext(AuthContext);

@@ -29,7 +29,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import HomeScreen from './App/Containers/HomeScreen'
-import Screen2 from './App/Containers/Screen2'
+import NotesScreen from './App/Containers/NotesScreen'
 
 import LoginScreen from './App/Containers/Login'
 import RegisterScreen from './App/Containers/Register'
@@ -120,7 +120,7 @@ const App: () => React$Node = () => {
           ? (
             <Stack.Navigator>
               <Stack.Screen name='Home Screen' component={HomeScreen}/>
-              <Stack.Screen name='Screen2' component={Screen2}/>
+              <Stack.Screen name='NotesScreen' component={NotesScreen}/>
             </Stack.Navigator>
           )
           : (
